@@ -1,4 +1,13 @@
-params ["_unit", "_killer"];
+params [
+    ["_unit",objNull, [objNull]]
+    , ["_killer",objNull, [objNull]]
+];
+
+// Either the KILLER directly or the unit responsible, whichever was the player
+_killer = vehicle _killer;
+if (!isPlayer _killer && isPlayer leader _killer) then {
+    _killer = leader _killer;
+};
 
 if (isServer) then {
 
@@ -104,9 +113,12 @@ if (isServer) then {
             if ((GRLIB_side_friendly getFriend GRLIB_side_resistance) >= 0.6) then {
 
                 // Killed by BLUFOR
-                if (side _killer == GRLIB_side_friendly) then {
-                    if (KP_liberation_asymmetric_debug > 0) then {diag_log format ["[KP LIBERATION] [ASYMMETRIC] Guerilla unit killed by: %1", name _killer];};
-                    [3, [(name _unit)]] remoteExec ["F_cr_globalMsg"];
+                if (side _killer == GRLIB_side_friendly && isPlayer _killer) then {
+                    // Yes we want to log no matter what, and we want the detail, including STEAM ID
+                    if (true) then {
+                        diag_log format ["[KP LIBERATION] [ASYMMETRIC] Guerilla named %1 killed by %2 (uid: %3)", name _unit, name _killer, getPlayerUID _killer];
+                    };
+                    [3, [_unit, _killer]] remoteExec ["F_cr_globalMsg"];
                     stats_resistance_teamkills = stats_resistance_teamkills + 1;
                     [KP_liberation_cr_resistance_penalty, true] spawn F_cr_changeCR;
                 };
@@ -123,9 +135,12 @@ if (isServer) then {
             stats_civilians_killed = stats_civilians_killed + 1;
 
             // Killed by BLUFOR
-            if (side _killer == GRLIB_side_friendly) then {
-                if (KP_liberation_civrep_debug > 0) then {diag_log format ["[KP LIBERATION] [CIVREP] Civilian killed by: %1", name _killer];};
-                [2, [(name _unit)]] remoteExec ["F_cr_globalMsg"];
+            if (side _killer == GRLIB_side_friendly && isPlayer _killer) then {
+                // Yes we want to log no matter what, and we want the detail, including STEAM ID
+                if (true) then {
+                    diag_log format ["[KP LIBERATION] [CIVREP] Civilian %1 killed by %2 (uid: %3)", name _unit, name _killer, getPlayerUID _killer];
+                };
+                [2, [_unit, _killer]] remoteExec ["F_cr_globalMsg"];
                 [KP_liberation_cr_kill_penalty, true] spawn F_cr_changeCR;
             };
 

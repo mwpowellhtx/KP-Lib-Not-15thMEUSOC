@@ -5890,26 +5890,26 @@
             <Korean>가장 가까운 AI</Korean>
         </Key>
         <Key ID="STR_CR_KILLMSG">
-            <Original>A civilian named %1 was killed!</Original>
-            <German>Ein Zivilist mit Namen %1 wurde getötet!</German>
-            <Russian>Гражданский %1 был убит!</Russian>
-            <Italian>Un civile di nome %1 è stato ucciso!</Italian>
-            <Chinesesimp>一个名叫%1的平民被击杀了！</Chinesesimp>
-            <Chinese>一個名叫 %1 的平民被擊殺了！</Chinese>
-            <Turkish>%1 ismindeki sivil öldürüldü!</Turkish>
-            <Portuguese>Um civil de nome %1 foi morto!</Portuguese>
-            <Korean>민간인 %가 사망하였다!</Korean>
+            <Original>A civilian named %1 was killed by %2!</Original>
+            <German>Ein Zivilist namens %1 wurde von %2 getötet!</German>
+            <Russian>Гражданское лицо по имени %1 было убито %2!</Russian>
+            <Italian>Un civile di nome %1 è stato ucciso da %2!</Italian>
+            <Chinesesimp>一个名叫 %1 的平民被 %2 杀死！</Chinesesimp>
+            <Chinese>一個名叫 %1 的平民被 %2 殺死！</Chinese>
+            <Turkish>%1 isimli bir sivil %2 tarafından öldürüldü!</Turkish>
+            <Portuguese>Um civil chamado %1 foi morto por %2!</Portuguese>
+            <Korean>%1 이라는 이름의 민간인이 %2 에 의해 사망했습니다!</Korean>
         </Key>
         <Key ID="STR_CR_VEHICLEMSG">
-            <Original>A civilian's vehicle was seized!</Original>
-            <German>Ein Zivilfahrzeug wurde beschlagnahmt!</German>
-            <Russian>Транспорт гражданского был захвачен!</Russian>
-            <Italian>Un veicolo civile è stato confiscato!</Italian>
-            <Chinesesimp>一辆平民载具被强征了！</Chinesesimp>
-            <Chinese>一輛平民載具備強徵了！</Chinese>
-            <Turkish>Bir sivil aracı ele geçirildi!</Turkish>
-            <Portuguese>Um veículo de civil foi tomado!</Portuguese>
-            <Korean>민간인의 차량이 탈취되었다!</Korean>
+            <Original>A civilian's vehicle was seized by %1!</Original>
+            <German>Ein Zivilfahrzeug wurde von %1!</German>
+            <Russian>Автомобиль гражданского лица был конфискован %1!</Russian>
+            <Italian>Il veicolo di un civile è stato sequestrato da %1!</Italian>
+            <Chinesesimp>一辆平民的车辆被 %1 扣押！</Chinesesimp>
+            <Chinese>一輛平民的車輛被 %1 扣押！</Chinese>
+            <Turkish>Bir sivilin aracına %1 oranında el konuldu!</Turkish>
+            <Portuguese>O veículo de um civil foi apreendido por %1!</Portuguese>
+            <Korean>민간인의 차량이 %1 에 의해 압수되었습니다!</Korean>
         </Key>
         <Key ID="STR_CR_BUILDINGMSG">
             <Original>Civilians are complaining about %1 lost buildings.</Original>
@@ -5923,13 +5923,13 @@
             <Korean>민간인들이 %1 건물이 파괴된 것에 대해 불평하고 있다. </Korean>
         </Key>
         <Key ID="STR_CR_HEALMSG">
-            <Original>Civilian named %1 is thankful for your help.</Original>
-            <German>Der Zivilist %1 ist dankbar für die Hilfe.</German>
-            <Russian>Гражданский %1 благодарен за вашу помощь.</Russian>
-            <Italian>Il civile di nome %1 ti ringrazia per l'aiuto.</Italian>
-            <Portuguese>Um civil chamado %1 agradeceu sua ajuda.</Portuguese>
-            <Chinese>平民 %1 感謝你的幫助。</Chinese>
-            <Korean>시민 %1 가 도와줘서 고맙다고 인사한다. </Korean>
+            <Original>Civilian named %1 is thankful for help from %2.</Original>
+            <German>Zivilist namens %1 ist dankbar für die Hilfe von %2.</German>
+            <Russian>Гражданский по имени %1 благодарен за помощь от %2.</Russian>
+            <Italian>Il civile di nome %1 è grato per l'aiuto di %2.</Italian>
+            <Portuguese>O civil chamado %1 agradece a ajuda de %2.</Portuguese>
+            <Chinese>名為 %1 的平民感謝 %2 的説明。</Chinese>
+            <Korean>%1 이라는 민간인은 %2 의 도움에 감사드립니다.</Korean>
         </Key>
         <Key ID="STR_PARAM_CR_BUILDING">
             <Original>Civil Reputation penalty for buildings if building is</Original>
@@ -6259,14 +6259,14 @@
             <Korean>%1 분 남음(재투입차량에서 재생대기시간)</Korean>
         </Key>
         <Key ID="STR_CR_RESISTANCE_KILLMSG">
-            <Original>An allied resistance fighter named %1 was killed!</Original>
-            <German>Ein verbündeter Widerstandskämpfer mit Namen %1 wurde getötet!</German>
-            <Russian>Союзный боец сопротивления %1 был убит!</Russian>
-            <Italian>Un'alleato della resistenza di nome %1 è stato ucciso!</Italian>
-            <Chinesesimp>一位名叫%1的友军抵抗军战士阵亡了！</Chinesesimp>
-            <Chinese>一名叫做 %1 的友軍抵抗軍戰士陣亡了！</Chinese>
-            <Portuguese>Um aliado das forças de resistência de nome %1 foi morto!</Portuguese>
-            <Korean>% 라고 하는 아군에 협조한 민병대가 전사하였다.</Korean>
+            <Original>An allied resistance fighter named %1 was killed by %2!</Original>
+            <German>Ein alliierter Widerstandskämpfer namens %1 wurde von %2 getötet!</German>
+            <Russian>Союзный борец сопротивления по имени %1 был убит %2!</Russian>
+            <Italian>Un combattente della resistenza alleato di nome %1 è stato ucciso da %2!</Italian>
+            <Chinesesimp>一名名叫 %1 的盟军抵抗战士被 %2 击毙！</Chinesesimp>
+            <Chinese>一名名叫 %1 的盟軍抵抗戰士被 %2 擊斃！</Chinese>
+            <Portuguese>Um lutador da resistência aliado chamado %1 foi morto por %2!</Portuguese>
+            <Korean>%1 이라는 이름의 연합군 저항군이 %2 에 의해 사망했습니다!</Korean>
         </Key>
         <Key ID="STR_PARAMS_DEBUG_SAVE">
             <Original>Gamedata saving</Original>

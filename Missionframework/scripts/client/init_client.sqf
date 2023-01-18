@@ -67,7 +67,8 @@ execVM "scripts\client\markers\update_production_sites.sqf";
 
 player addMPEventHandler ["MPKilled", {_this spawn kill_manager;}];
 player addEventHandler ["GetInMan", {[_this select 2] spawn kp_fuel_consumption;}];
-player addEventHandler ["GetInMan", {[_this select 2] spawn kp_cr_checkVehicle;}];
+// Just relay the arguments list 'as is'
+player addEventHandler ["GetInMan", { _this spawn kp_cr_checkVehicle; }];
 player addEventHandler ["GetInMan", {[_this select 2] call kp_vehicle_permissions;}];
 player addEventHandler ["SeatSwitchedMan", {[_this select 2] call kp_vehicle_permissions;}];
 
