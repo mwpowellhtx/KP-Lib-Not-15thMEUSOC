@@ -1,0 +1,53 @@
+respawn = 3;
+respawndelay = 5;
+respawnButton = 1;
+disabledAI = true;
+
+enableDebugConsole = 1;
+allowFunctionsLog = 0;
+unsafeCVL = 1;
+
+briefingName = $STR_MISSION_TITLE;
+overviewText = "15th MEU Public Server Liberation v0.96.6";
+overviewTextLocked="15th MEU Public Server Liberation v0.96.6";
+overviewPicture = "res\liberation15a.jpg";
+overviewPictureLocked="res\liberation15a.jpg";
+author = "[GREUH] Zbug, McKeewa; [KP] Wyqer; 15th MEU Public Server Team";
+onLoadName = $STR_MISSION_TITLE;
+onLoadMission = "15th MEU Public Server - 15thmeu.net";
+loadScreen = "res\liberation15a.jpg";
+
+class Header
+{
+	gameType = "CTI";
+	minPlayers = 1;
+	maxPlayers = 64;
+};
+
+joinUnassigned = 1;
+
+corpseManagerMode = 1;
+corpseLimit = 50;
+corpseRemovalMinTime = 60;
+corpseRemovalMaxTime = 300;
+wreckManagerMode = 1;
+wreckLimit = 20;
+wreckRemovalMinTime = 1200;
+wreckRemovalMaxTime = 7200;
+minPlayerDistance = 1000;
+
+#include "GREUH\UI\GREUH_interface.hpp"
+#include "ui\liberation_interface.hpp"
+#include "ui\liberation_notifications.hpp"
+#include "ui\mission_params.hpp"
+
+class CfgDebriefing
+{
+	class End1
+	{
+		title =	$STR_SORRY;
+		subtitle = "";
+		description = $STR_COMMANDER_NOT_AUTHORIZED;
+		pictureBackground = "";
+	};
+};
