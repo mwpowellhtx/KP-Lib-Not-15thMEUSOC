@@ -188,16 +188,6 @@ class Missions
 ```
 
 ## Differentiators
-Couple of notes differentiating this repository from the core offering. I did spend a little time correcting a couple of obvious issues, improvements, otherwise sticks in my craw, that were in the core repository. These sorts of conditions would consistently ruin the player UX, especially for those when the numbers, engaging the mod well, matters.
+Some key distinguishing factors between this repository and the root repository.
 
-* Added accountability logging.
-  * Players are now connected with offensive or otherwise rewarding behavior.
-    * Civilian casualties, caused directly by a player, or by the unit player squad leader.
-    * Friendly guerrillas, casualties counted among the same.
-      * Along similar lines, when the same is said about non-player damage, should effectively be ignored.
-    * Surrendered unit casualties no longer count as civilian casualties.
-      * This would occur when, for example, using ACE woundages, units would be injured or uncon, and fall through to surrender, which converts to `CIVILIAN` side, and eventually bleed out.
-    * Civilian vehicles seized.
-  * Not a player event, per se, but now also counting only `"House"` buildings which acually support _"spawn positions"_.
-    * As compared or contrasted with casual or incidental `"House"` objects such as _walls_, _fences_, _lamp posts_, and so on.
-  * Such actions are also logged for posterity, administrator review, etc, and includes both player name and UID.
+* Improved [_player accountability_](https://github.com/mwpowellhtx/KP-Lib-Not-15thMEUSOC/issues/2#issuecomment-1397259271), as well as [_buildings lost accountability_](https://github.com/mwpowellhtx/KP-Lib-Not-15thMEUSOC/issues/2#issuecomment-1397268114).
