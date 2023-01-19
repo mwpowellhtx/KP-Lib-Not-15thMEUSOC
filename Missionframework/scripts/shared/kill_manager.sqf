@@ -9,6 +9,8 @@ if (!isPlayer _killer && isPlayer leader _killer) then {
     _killer = leader _killer;
 };
 
+private _surrender = _unit getVariable ["KPLIB_surrender", false];
+
 if (isServer) then {
 
     if (KP_liberation_kill_debug > 0) then {diag_log format ["[KP LIBERATION] [KILL] Kill Manager executed - _unit: %1 (%2) - _killer: %3 (%4)", typeOf _unit, _unit, typeOf _killer, _killer];};
@@ -134,8 +136,8 @@ if (isServer) then {
         if (side (group _unit) == GRLIB_side_civilian) then {
             stats_civilians_killed = stats_civilians_killed + 1;
 
-            // Killed by BLUFOR
-            if (side _killer == GRLIB_side_friendly && isPlayer _killer) then {
+            // Killed by BLUFOR, excluding 'KPLIB_surrender' i.e. enemy which may have 'switched' to setCaptive i.e. 'civ'
+            if (!_surrender &&  side _killer == GRLIB_side_friendly && isPlayer _killer) then {
                 // Yes we want to log no matter what, and we want the detail, including STEAM ID
                 if (true) then {
                     diag_log format ["[KP LIBERATION] [CIVREP] Civilian %1 killed by %2 (uid: %3)", name _unit, name _killer, getPlayerUID _killer];

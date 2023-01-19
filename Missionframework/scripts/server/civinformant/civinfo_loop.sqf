@@ -34,6 +34,7 @@ while {true} do {
 			_informant disableAI "MOVE";
 			_informant playmove "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon";
 			sleep 2;
+			_informant setVariable ["KPLIB_surrender", true, 2];
 			_informant setCaptive true;
 		};
 

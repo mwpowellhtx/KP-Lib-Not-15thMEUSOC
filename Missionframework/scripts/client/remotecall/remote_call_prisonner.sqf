@@ -59,6 +59,7 @@ if (alive _unit) then {
 		_grp = createGroup [GRLIB_side_enemy, true];
 		[_unit] joinSilent _grp;
 		_unit setUnitPos "AUTO";
+		_unit setVariable ["KPLIB_surrender", true, 2];
 		_unit setCaptive false;
 
 		if ((vehicle _unit != _unit) && !(_unit isEqualTo (driver vehicle _unit))) then {
