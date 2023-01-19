@@ -8,13 +8,13 @@ allowFunctionsLog = 0;
 unsafeCVL = 1;
 
 briefingName = $STR_MISSION_TITLE;
-overviewText = "15th MEU Public Server Liberation v0.96.6";
-overviewTextLocked="15th MEU Public Server Liberation v0.96.6";
+overviewText = "NOT 15th MEU Public Server Liberation v0.96.6";
+overviewTextLocked="NOT 15th MEU Public Server Liberation v0.96.6";
 overviewPicture = "res\liberation15a.jpg";
 overviewPictureLocked="res\liberation15a.jpg";
-author = "[GREUH] Zbug, McKeewa; [KP] Wyqer; 15th MEU Public Server Team";
+author = "[GREUH] Zbug, McKeewa; [KP] Wyqer; NOT 15th MEU Public Server Team";
 onLoadName = $STR_MISSION_TITLE;
-onLoadMission = "15th MEU Public Server - 15thmeu.net";
+onLoadMission = "NOT 15th MEU Public Server - 15thmeu.net";
 loadScreen = "res\liberation15a.jpg";
 
 class Header
