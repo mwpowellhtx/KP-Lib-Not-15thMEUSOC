@@ -23,9 +23,13 @@
 
 [Steam Workshop](http://steamcommunity.com/id/wyqer/myworkshopfiles/?appid=107410)
 
-This mission is only a continued project based on the original, but most likely abandoned, mission from [GreuhZbug](https://github.com/GreuhZbug).
+This mission is a continued project based on the original, but most likely abandoned, mission from [GreuhZbug](https://github.com/GreuhZbug).
 
 [Original Liberation mission v0.924](https://github.com/GreuhZbug/greuh_liberation.Altis)
+
+Also a continued project based on the continued project, [KillahPotatoes](https://github.com/KillahPotatoes).
+
+[KP Liberation mission v0.96.7a](https://github.com/KillahPotatoes/KP-Liberation)
 
 If you like the work and think it's worth a small donation, feel free to use the following link:
 
