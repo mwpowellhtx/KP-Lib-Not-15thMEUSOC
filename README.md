@@ -29,7 +29,7 @@ This mission is only a continued project based on the original, but most likely 
 
 If you like the work and think it's worth a small donation, feel free to use the following link:
 
-[Donate via paypal.me](https://www.paypal.me/wyqer)
+<!-- [Donate via paypal.me](https://www.paypal.me/wyqer) -->
 
 ## Overview
 The area has fallen to the enemy, and it is up to you to take it back. Embark on a persistent campaign with your teammates to liberate all the major cities of the area that will most likely span several weeks of real time.
@@ -129,54 +129,52 @@ These mods are recommended by us, as they are likely to increase your gaming exp
 
 Also you should think about using these mods as serverside mods:
 * [Advanced Rappeling](http://steamcommunity.com/sharedfiles/filedetails/?id=713709341)
+* [Advanced Urban Rappelling](http://steamcommunity.com/sharedfiles/filedetails/?id=730310357), which I think supersedes _Advanced Rappeling_
 * [Advanced Sling Loading](http://steamcommunity.com/sharedfiles/filedetails/?id=615007497)
 * [Advanced Towing](http://steamcommunity.com/sharedfiles/filedetails/?id=639837898)
 
 ## Recommended Difficulty Settings
 I recommend using the following difficulty settings for this mission (User profile of your server):
-```
+
+```hpp
 difficulty="Custom";
-class DifficultyPresets
-{
-    class CustomDifficulty
-    {
-        class Options
-        {
-            groupIndicators=0;
-            friendlyTags=0;
-            enemyTags=0;
-            detectedMines=0;
-            commands=0;
-            waypoints=0;
-            weaponInfo=1;
-            stanceIndicator=1;
-            reducedDamage=0;
-            staminaBar=0;
-            weaponCrosshair=0;
-            visionAid=0;
-            thirdPersonView=0;
-            cameraShake=1;
-            scoreTable=0;
-            deathMessages=0;
-            vonID=1;
-            mapContent=0;
-            autoReport=0;
-            multipleSaves=0;
-            squadRadar=0;
-            tacticalPing=0;
+class DifficultyPresets {
+    class CustomDifficulty {
+        class Options {
+            groupIndicators = 0;
+            friendlyTags = 0;
+            enemyTags = 0;
+            detectedMines = 0;
+            commands = 0;
+            waypoints = 0;
+            weaponInfo = 1;
+            stanceIndicator = 1;
+            reducedDamage = 0;
+            staminaBar = 0;
+            weaponCrosshair = 0;
+            visionAid = 0;
+            thirdPersonView = 0;
+            cameraShake = 1;
+            scoreTable = 0;
+            deathMessages = 0;
+            vonID = 1;
+            mapContent = 0;
+            autoReport = 0;
+            multipleSaves = 0;
+            squadRadar = 0;
+            tacticalPing = 0;
         };
-        aiLevelPreset=3;
+        aiLevelPreset = 3;
     };
-    class CustomAILevel
-    {
-        skillAI=1.0;
-        precisionAI=0.15;
+    class CustomAILevel {
+        skillAI = 1.0;
+        precisionAI = 0.15;
     };
 };
 ```
 
 In the server config file:
-```
+```hpp
 forcedDifficulty = "custom";
 
 class Missions
@@ -188,3 +186,18 @@ class Missions
     };
 };
 ```
+
+## Differentiators
+Couple of notes differentiating this repository from the core offering. I did spend a little time correcting a couple of obvious issues, improvements, otherwise sticks in my craw, that were in the core repository. These sorts of conditions would consistently ruin the player UX, especially for those when the numbers, engaging the mod well, matters.
+
+* Added accountability logging.
+  * Players are now connected with offensive or otherwise rewarding behavior.
+    * Civilian casualties, caused directly by a player, or by the unit player squad leader.
+    * Friendly guerrillas, casualties counted among the same.
+      * Along similar lines, when the same is said about non-player damage, should effectively be ignored.
+    * Surrendered unit casualties no longer count as civilian casualties.
+      * This would occur when, for example, using ACE woundages, units would be injured or uncon, and fall through to surrender, which converts to `CIVILIAN` side, and eventually bleed out.
+    * Civilian vehicles seized.
+  * Not a player event, per se, but now also counting only `"House"` buildings which acually support _"spawn positions"_.
+    * As compared or contrasted with casual or incidental `"House"` objects such as _walls_, _fences_, _lamp posts_, and so on.
+  * Such actions are also logged for posterity, administrator review, etc, and includes both player name and UID.
