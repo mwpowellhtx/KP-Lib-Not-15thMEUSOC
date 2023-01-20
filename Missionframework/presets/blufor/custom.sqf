@@ -37,6 +37,8 @@ KP_liberation_plane_slot_building = "Land_TentHangar_V1_F";             // The h
 KP_liberation_supply_crate = "CargoNet_01_box_F";                       // This defines the supply crates, as in resources.
 KP_liberation_ammo_crate = "B_CargoNet_01_ammo_F";                      // This defines the ammunition crates.
 KP_liberation_fuel_crate = "CargoNet_01_barrels_F";                     // This defines the fuel crates.
+KP_liberation_hare_classname = "rhsusf_m998_w_2dr_halftop";             // The rabbit asset class
+KP_liberation_tortoise_classname = "rhsusf_m1245_m2crows_socom_d";      // The tortoise asset class
 
 /*
     --- Friendly classnames ---

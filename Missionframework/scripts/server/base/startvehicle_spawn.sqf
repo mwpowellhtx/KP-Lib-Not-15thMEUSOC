@@ -1,82 +1,89 @@
-waitUntil {time > 1};
-waitUntil {!isNil "huron"};
+waitUntil { time > 1; };
+// Which should be set to objNull by its manager
+waitUntil { !isNil "huron"; };
 
-for [{_i=0}, {!isNil ("littlebird_" + str _i)}, {_i = _i + 1}] do {
-	private _KP_liberation_little_bird_pad = missionNamespace getVariable ("littlebird_" + str _i);
-	private _KP_liberation_little_bird = KP_liberation_little_bird_classname createVehicle [((getposATL _KP_liberation_little_bird_pad) select 0),((getposATL _KP_liberation_little_bird_pad) select 1),((getposATL _KP_liberation_little_bird_pad) select 2) + 0.2];
-	_KP_liberation_little_bird enableSimulationGlobal false;
-	_KP_liberation_little_bird allowdamage false;
-	_KP_liberation_little_bird setDir (getDir _KP_liberation_little_bird_pad);
-	_KP_liberation_little_bird setposATL [((getposATL _KP_liberation_little_bird_pad) select 0),((getposATL _KP_liberation_little_bird_pad) select 1),((getposATL _KP_liberation_little_bird_pad) select 2) + 0.2];
-	if(KP_liberation_clear_cargo) then {
-		clearWeaponCargoGlobal _KP_liberation_little_bird;
-		clearMagazineCargoGlobal _KP_liberation_little_bird;
-		clearItemCargoGlobal _KP_liberation_little_bird;
-		clearBackpackCargoGlobal _KP_liberation_little_bird;
-	};
-	sleep 0.5;
-	_KP_liberation_little_bird enableSimulationGlobal true;
-	_KP_liberation_little_bird setDamage 0;
-	_KP_liberation_little_bird allowdamage true;
-	_KP_liberation_little_bird setVariable ["KP_liberation_preplaced", true, true];
+// All such CANDIDATES from which to choose
+private _candidates = entities "Land_ClutterCutter_small_F";
+
+// Allowing for 1+ STARTBASE 'sectors'
+private _startbases = _candidates select { toLower vehicleVarName _x find "startbase" == 0; };
+
+// ELIGIBLE such CANDIDATES must be within range of at least one of the STARTBASES
+private _eligible = (_candidates - _startbases) select {
+    private _y = _x;
+    { _x distance _y <= GRLIB_sector_size; } count _startbases > 0;
 };
 
-for [{_i=0}, {!isNil ("boat_" + str _i)}, {_i = _i + 1}] do {
-	private _KP_liberation_boat_spawn = missionNamespace getVariable ("boat_" + str _i);
-	private _KP_liberation_boat = KP_liberation_boat_classname createVehicle [((getposATL _KP_liberation_boat_spawn) select 0),((getposATL _KP_liberation_boat_spawn) select 1),((getposATL _KP_liberation_boat_spawn) select 2) + 0.2];
-	_KP_liberation_boat enableSimulationGlobal false;
-	_KP_liberation_boat allowdamage false;
-	_KP_liberation_boat setDir (getDir _KP_liberation_boat_spawn);
-	_KP_liberation_boat setposATL (getposATL _KP_liberation_boat_spawn);
-	if(KP_liberation_clear_cargo) then {
-		clearWeaponCargoGlobal _KP_liberation_boat;
-		clearMagazineCargoGlobal _KP_liberation_boat;
-		clearItemCargoGlobal _KP_liberation_boat;
-		clearBackpackCargoGlobal _KP_liberation_boat;
-	};
-	sleep 0.5;
-	_KP_liberation_boat enableSimulationGlobal true;
-	_KP_liberation_boat setDamage 0;
-	_KP_liberation_boat allowdamage true;
-	_KP_liberation_boat setVariable ["KP_liberation_preplaced", true, true];
-};
+private _objectPosDelta = [0, 0, 0.1];
 
-for [{_i=0}, {!isNil ("plane_" + str _i)}, {_i = _i + 1}] do {
-	private _KP_liberation_plane_spawn = missionNamespace getVariable ("plane_" + str _i);
-	private _KP_liberation_plane = KP_liberation_plane_classname createVehicle [((getposATL _KP_liberation_plane_spawn) select 0),((getposATL _KP_liberation_plane_spawn) select 1),((getposATL _KP_liberation_plane_spawn) select 2) + 0.2];
-	_KP_liberation_plane enableSimulationGlobal false;
-	_KP_liberation_plane allowdamage false;
-	_KP_liberation_plane setDir (getDir _KP_liberation_plane_spawn);
-	_KP_liberation_plane setposATL (getposATL _KP_liberation_plane_spawn);
-	if(KP_liberation_clear_cargo) then {
-		clearWeaponCargoGlobal _KP_liberation_plane;
-		clearMagazineCargoGlobal _KP_liberation_plane;
-		clearItemCargoGlobal _KP_liberation_plane;
-		clearBackpackCargoGlobal _KP_liberation_plane;
-	};
-	sleep 0.5;
-	_KP_liberation_plane enableSimulationGlobal true;
-	_KP_liberation_plane setDamage 0;
-	_KP_liberation_plane allowdamage true;
-	_KP_liberation_plane setVariable ["KP_liberation_preplaced", true, true];
-};
+// // TODO: TBD: do not feel like editing all the missions just now...
+// // TODO: TBD: however this could be so easily extensible, i.e.
+// , [ "rotary", KP_liberation_rotary_classname]
+// , [ "attack_rotary", KP_liberation_attack_rotary_classname]
 
-for [{_i=0}, {!isNil ("bigbird_" + str _i)}, {_i = _i + 1}] do {
-	private _KP_liberation_big_bird_pad = missionNamespace getVariable ("bigbird_" + str _i);
-	private _KP_liberation_big_bird = KP_liberation_big_bird_classname createVehicle [((getposATL _KP_liberation_big_bird_pad) select 0),((getposATL _KP_liberation_big_bird_pad) select 1),((getposATL _KP_liberation_big_bird_pad) select 2) + 0.2];
-	_KP_liberation_big_bird enableSimulationGlobal false;
-	_KP_liberation_big_bird allowdamage false;
-	_KP_liberation_big_bird setDir (getDir _KP_liberation_big_bird_pad);
-	_KP_liberation_big_bird setposATL [((getposATL _KP_liberation_big_bird_pad) select 0),((getposATL _KP_liberation_big_bird_pad) select 1),((getposATL _KP_liberation_big_bird_pad) select 2) + 0.2];
-	if(KP_liberation_clear_cargo) then {
-		clearWeaponCargoGlobal _KP_liberation_big_bird;
-		clearMagazineCargoGlobal _KP_liberation_big_bird;
-		clearItemCargoGlobal _KP_liberation_big_bird;
-		clearBackpackCargoGlobal _KP_liberation_big_bird;
-	};
-	sleep 0.5;
-	_KP_liberation_big_bird enableSimulationGlobal true;
-	_KP_liberation_big_bird setDamage 0;
-	_KP_liberation_big_bird allowdamage true;
-	_KP_liberation_big_bird setVariable ["KP_liberation_preplaced", true, true];
-};
+// Allowing for authors to introduce their own custom specifications
+private _spec = missionNamespace getVariable ["KP_liberation_startvehicle_spec", [
+    // Which at least makes the following presumptions from the preset vars
+    ["littlebird", KP_liberation_little_bird_classname]
+    //             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    , [ "boat", KP_liberation_boat_classname]
+    //          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    , [ "plane", KP_liberation_plane_classname]
+    //           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    , [ "bigbird", KP_liberation_big_bird_classname]
+    //             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    , [ "tortoise", KP_liberation_tortoise_classname]
+    //              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    , [ "hare", KP_liberation_hare_classname]
+    //          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+]];
+
+diag_log format ["[KP LIBERATION] [STARTVEHICLE] Start vehicle specs: [_spec]: %1"
+    , str _spec
+];
+
+{
+    _x params [
+        ["_prefix", "", [""]]
+        , ["_class", "", [""]]
+    ];
+
+    // Does not matter what else the object is named, could be named 'prefix_foobar' for all we care
+    private _toBeCreated = _eligible select {
+        toLower vehicleVarName _x find _prefix == 0;
+    };
+
+    private _objects = _toBeCreated apply {
+        private _proxy = _x;
+        private _proxyPosATL = getPosATL _proxy;
+        private _proxyDir = getDir _proxy;
+        private _objectPosATL = [_proxyPosATL, _objectPosDelta] call BIS_fnc_vectorAdd;
+        // TODO: TBD: the first 'createVehicle' form simply does not work is too imprecise in its calculation
+        private _object = createVehicle [_class, _objectPosATL, [], 0, "CAN_COLLIDE"];
+        // TODO: TBD: see how this works, whether we need to (re-)set a position...
+        _object enableSimulationGlobal false;
+        _object allowDamage false;
+        _object setDir _proxyDir;
+        _object spawn {
+            private _object = _this;
+            sleep 0.5;
+            _object enableSimulationGlobal true;
+            _object setDamage 0;
+            _object allowDamage true;
+            _object setVariable ["KP_liberation_preplaced", true, true];
+            if (KP_liberation_clear_cargo) then {
+                clearWeaponCargoGlobal _object;
+                clearMagazineCargoGlobal _object;
+                clearItemCargoGlobal _object;
+                clearBackpackCargoGlobal _object;
+            };
+        };
+        _object;
+    };
+
+    diag_log format ["[KP LIBERATION] [STARTVEHICLE] Start vehicles spawned: [_prefix, _class, count _toBeCreated, count _objects]: %1"
+        , str [_prefix, _class, count _toBeCreated, count _objects]
+    ];
+} forEach _spec;
+
+true;
