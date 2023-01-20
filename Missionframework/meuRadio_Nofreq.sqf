@@ -1,5 +1,9 @@
 params ["_unit", "_localUnitType"];
 
+// Bypass when ACRE2 is not present
+if (isNil "acre_api_fnc_copypreset") exitWith {
+	false;
+};
 
 ["ACRE_PRC152", "default", "example1"] call acre_api_fnc_copyPreset;
 ["ACRE_PRC117F", "default", "example1"] call acre_api_fnc_copyPreset;
@@ -416,4 +420,4 @@ params ["_unit", "_localUnitType"];
 
 ["ACRE_PRC117F", "default", 99, "name", "GUARD UHF"] call acre_api_fnc_setPresetChannelField;
 
-
+true;
