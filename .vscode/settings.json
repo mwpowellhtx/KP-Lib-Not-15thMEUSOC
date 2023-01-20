@@ -9,6 +9,30 @@
         "*.ext": "ext",
         "*.fsm": "ext"
     },
+    "[sqf]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "[hpp]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "[cpp]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "[xml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "[json]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "[md]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
     "sqflint.ignoredVariables": [
         "_input0",
         "_thisArgs",
@@ -81,5 +105,6 @@
     ],
     "todo-tree.general.statusBar": "tags",
     "todo-tree.tree.showCountsInTree": true,
-    "todo-tree.tree.flat": true
+    "todo-tree.tree.flat": true,
+    "editor.useTabStops": false
 }
