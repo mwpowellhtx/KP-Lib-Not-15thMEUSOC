@@ -44,8 +44,16 @@ private _spec = missionNamespace getVariable ["KP_liberation_startvehicle_spec",
     //                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ]];
 
-diag_log format ["[KP LIBERATION] [STARTVEHICLE] Start vehicle specs: [_spec]: %1"
-    , str _spec
+// Specs which may be supported by the current configuration
+private _specToBeCreated = _spec select {
+    _x params ["", "_class"];
+    private _config = configFile >> "CfgVehicles" >> _class;
+    !isNull _config;
+};
+// So we do not spin our unnecessarily wheels over configuration which does not exist
+
+diag_log format ["[KP LIBERATION] [STARTVEHICLE] Start vehicle specs: [_spec, _specToBeCreated]: %1"
+    , str [_spec, _specToBeCreated]
 ];
 
 {
@@ -90,6 +98,6 @@ diag_log format ["[KP LIBERATION] [STARTVEHICLE] Start vehicle specs: [_spec]: %
     diag_log format ["[KP LIBERATION] [STARTVEHICLE] Start vehicles spawned: [_prefix, _class, count _toBeCreated, count _objects]: %1"
         , str [_prefix, _class, count _toBeCreated, count _objects]
     ];
-} forEach _spec;
+} forEach _specToBeCreated;
 
 true;
