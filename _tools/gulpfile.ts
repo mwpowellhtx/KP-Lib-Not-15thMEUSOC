@@ -40,6 +40,7 @@ for (let preset of presets) {
 
     console.log(preset);
 
+    // TODO: TBD: somewhere in this mix we should align addons, mod bundles as well...
     gulp.task('mission_' + taskName, gulp.series(
         /** Copy mission framework to output dir */
         function frameworkCopy () {
@@ -55,18 +56,18 @@ for (let preset of presets) {
 
         /** Replace variables values in configuration file */
         function configReplace () {
+            // https://jsfiddle.net/ute7x6ob/97
             let src = gulp.src(mission.getMissionConfigFilePath());
-
             const variables = Object.getOwnPropertyNames(preset.variables);
             for (let variable of variables) {
-                // https://regex101.com/r/YknC8r/1
-                const regex = new RegExp(`(${variable} += +)(?:\\d+|".+")`, 'ig');
-                const value = JSON.stringify(preset.variables[variable]);
-
-                // replace variable value
-                src = src.pipe(gulpReplace(regex, `$1${value}`));
+                const value = preset.variables[variable];
+                // Allowing for SCALAR, STRING, and even ARRAY value substitution via build presets
+                const re = new RegExp(`(${variable}\\s*=\\s*)(?:\\d+|".+"|\\[.*\\])(\\s*;)`);
+                // Allowing for NESTED ARRAY use cases with trailing "];"          ^^^^^^^
+                // Also doing a gulpReplace(), could just do a RegExp replace, possibly, but that is okay
+                src = src.pipe(gulpReplace(re, `$1${value}$2`));
+                // Include the trailing semicolon here due to the above match
             }
-
             return src.pipe(gulp.dest(mission.getOutputDir()));
         },
 
@@ -79,16 +80,23 @@ for (let preset of presets) {
 
             return gulp.src(mission.getFrameworkPath().concat('/stringtable.xml'))
                 .pipe(gulpModify((content: string) => {
-                    let version: string = content.match(versionRegex)['groups']['version'];
+                    var contentMatch = content.match(versionRegex);
+                    // TODO: TBD: is this adequately sufficient to the task? i.e. guarding match and the 'groups'
+                    if (contentMatch !== null) {
+                        var matchedGroups = contentMatch['groups'];
+                        if (matchedGroups) {
+                            let version: string = matchedGroups['version'];
 
-                    // append commit hash and mark as dev version in PRs
-                    if ('pull_request' === process.env.GITHUB_EVENT_NAME) {
-                        content = content.replace(versionRegex, `$1${version}-${process.env.GITHUB_SHA}$3`);
-                        version = version.concat('-dev');
-                    }
-
-                    // add version number and map name to mission name
-                    return content.replace(nameRegex, `$1CTI 34 KP Liberation ${preset.mapDisplay || preset.map} ${version}$3`);
+                            // append commit hash and mark as dev version in PRs
+                            if ('pull_request' === process.env.GITHUB_EVENT_NAME) {
+                                content = content.replace(versionRegex, `$1${version}-${process.env.GITHUB_SHA}$3`);
+                                version = version.concat('-dev');
+                            }
+    
+                            // add version number and map name to mission name
+                            return content.replace(nameRegex, `$1CTI 34 KP Liberation ${preset.mapDisplay || preset.map} ${version}$3`);
+                        }
+                    };
                 }))
                 .pipe(gulp.dest(mission.getOutputDir(), { overwrite: true, }))
             ;
