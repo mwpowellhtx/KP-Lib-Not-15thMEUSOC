@@ -46,7 +46,10 @@ private _spec = missionNamespace getVariable ["KP_liberation_startvehicle_spec",
 
 // Specs which may be supported by the current configuration
 private _specToBeCreated = _spec select {
-    _x params ["", "_class"];
+    _x params [
+        ""
+        , ["_class", "", [""]]
+    ];
     private _config = configFile >> "CfgVehicles" >> _class;
     !isNull _config;
 };
