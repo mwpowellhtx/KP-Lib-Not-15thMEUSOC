@@ -44,6 +44,11 @@ private _spec = missionNamespace getVariable ["KP_liberation_startvehicle_spec",
     //                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ]];
 
+// Allowing authors to specify late binding references to the preset vars via mission config SQF
+if ([_spec] isEqualTypeArray [{}]) then {
+    _spec = [] call _spec;
+};
+
 // Specs which may be supported by the current configuration
 private _specToBeCreated = _spec select {
     _x params [
