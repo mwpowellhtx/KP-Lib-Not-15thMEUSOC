@@ -32,6 +32,9 @@ KP_liberation_plane_slot_building = "Land_TentHangar_V1_F";             // The h
 KP_liberation_supply_crate = "CargoNet_01_box_F";                       // This defines the supply crates, as in resources.
 KP_liberation_ammo_crate = "O_CargoNet_01_ammo_F";                      // This defines the ammunition crates.
 KP_liberation_fuel_crate = "CargoNet_01_barrels_F";                     // This defines the fuel crates.
+KP_liberation_container_repair = "Land_Pod_Heli_Transport_04_repair_F"; // Taru Repaircontainer
+KP_liberation_container_fuel = "Land_Pod_Heli_Transport_04_fuel_F";     // Taru Fuelcontainer
+KP_liberation_container_ammo = "Land_Pod_Heli_Transport_04_ammo_F";     // Taru Ammocontainer
 
 /*
     --- Friendly classnames ---
@@ -231,9 +234,9 @@ support_vehicles = [
     ["O_Heli_Transport_04_repair_F",500,0,150],                         // Taru Repair
     ["O_Heli_Transport_04_ammo_F",300,200,150],                         // Taru Ammo
     ["O_Heli_Transport_04_fuel_F",300,0,350],                           // Taru Fuel
-    ["Land_Pod_Heli_Transport_04_repair_F",275,0,0],                    // Taru Repaircontainer
-    ["Land_Pod_Heli_Transport_04_ammo_F",75,200,0],                     // Taru Ammocontainer
-    ["Land_Pod_Heli_Transport_04_fuel_F",75,0,200]                      // Taru Fuelcontainer
+    [KP_liberation_container_repair,275,0,0],
+    [KP_liberation_container_fuel,75,200,0],
+    [KP_liberation_container_ammo,75,0,200]
 ];
 
 /*

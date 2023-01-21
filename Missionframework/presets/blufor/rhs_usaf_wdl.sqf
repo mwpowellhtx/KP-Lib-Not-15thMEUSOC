@@ -24,6 +24,8 @@ pilot_classname = "rhsusf_usmc_marpat_wd_helipilot";                    // This 
 KP_liberation_little_bird_classname = "RHS_UH1Y";      		            // These are the little birds which spawn on the Freedom or at Chimera base.
 KP_liberation_big_bird_classname = "rhsusf_CH53E_USMC";      		    // This is the transport helicopter which spawns on the Freedom or at Chimera base.
 KP_liberation_boat_classname = "UK3CB_TKA_B_RHIB_Gunboat";              // These are the boats which spawn at the stern of the Freedom.
+// TODO: TBD: decide what we're doing for 'plane' classnames... thinking I want to run the FIREWILL Aviation Pack (+Helis)
+// FIREWILL Aviation Pack (Complete) + Helis / https://steamcommunity.com/sharedfiles/filedetails/?id=1794848554
 KP_liberation_plane_classname = "JS_JC_FA18E";                          // These are the fixed wing planes that spawns on the Freedom.
 KP_liberation_truck_classname = "rhsusf_M977A4_BKIT_usarmy_wd";         // These are the trucks which are used in the logistic convoy system.
 KP_liberation_small_storage_building = "ContainmentArea_02_forest_F";   // A small storage area for resources.
@@ -37,6 +39,9 @@ KP_liberation_ammo_crate = "B_CargoNet_01_ammo_F";                      // This 
 KP_liberation_fuel_crate = "CargoNet_01_barrels_F";                     // This defines the fuel crates.
 KP_liberation_hare_classname = "rhsusf_m998_w_2dr_halftop";             // The rabbit asset class
 KP_liberation_tortoise_classname = "rhsusf_m1245_m2crows_socom_d";      // The tortoise asset class
+KP_liberation_container_repair = "B_Slingload_01_Repair_F";             // Huron Repair
+KP_liberation_container_fuel = "B_Slingload_01_Fuel_F";                 // Huron Fuel
+KP_liberation_container_ammo = "B_Slingload_01_Ammo_F";                 // Huron Ammo
 
 /*
     --- Friendly classnames ---
@@ -255,9 +260,9 @@ support_vehicles = [
     ["B_Truck_01_Repair_F",325,0,75],                                   // HEMTT Repair
     ["B_Truck_01_fuel_F",125,0,275],                                    // HEMTT Fuel
     ["B_Truck_01_ammo_F",125,200,75],                                   // HEMTT Ammo
-    ["B_Slingload_01_Repair_F",275,0,0],                                // Huron Repair
-    ["B_Slingload_01_Fuel_F",75,0,200],                                 // Huron Fuel
-    ["B_Slingload_01_Ammo_F",75,200,0]                                  // Huron Ammo
+    [KP_liberation_container_repair,275,0,0],
+    [KP_liberation_container_fuel,75,0,200],
+    [KP_liberation_container_ammo,75,200,0]
 ];
 
 /*

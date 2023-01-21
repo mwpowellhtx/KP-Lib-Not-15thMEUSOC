@@ -32,6 +32,9 @@ KP_liberation_plane_slot_building = "UNS_Hanger_repair";                // The h
 KP_liberation_supply_crate = "CargoNet_01_box_F";                       // This defines the supply crates, as in resources.
 KP_liberation_ammo_crate = "B_CargoNet_01_ammo_F";                      // This defines the ammunition crates.
 KP_liberation_fuel_crate = "CargoNet_01_barrels_F";                     // This defines the fuel crates.
+KP_liberation_container_repair = "B_Slingload_01_Repair_F";             // Huron Repair
+KP_liberation_container_fuel = "B_Slingload_01_Fuel_F";                 // Huron Fuel
+KP_liberation_container_ammo = "B_Slingload_01_Ammo_F";                 // Huron Ammo
 
 /*
     --- Friendly classnames ---
@@ -289,9 +292,9 @@ support_vehicles = [
     ["uns_M35A2_repair",325,0,75],                                      // M35A2 2.5T Truck (repair)
     ["uns_M35A2_fueltanker",125,0,275],                                 // M35A2 2.5T Tanker (Fuel)
     ["uns_M35A2_ammo",125,200,75],                                      // M35A2 2.5T Truck (Ammo)
-    ["B_Slingload_01_Repair_F",275,0,0],                                // Huron Repair
-    ["B_Slingload_01_Fuel_F",75,0,200],                                 // Huron Fuel
-    ["B_Slingload_01_Ammo_F",75,200,0]                                  // Huron Ammo
+    [KP_liberation_container_repair,275,0,0],
+    [KP_liberation_container_fuel,75,0,200],
+    [KP_liberation_container_ammo,75,200,0]
 ];
 
 /*

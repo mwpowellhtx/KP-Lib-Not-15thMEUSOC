@@ -37,6 +37,10 @@ KP_liberation_ammo_crate = "B_CargoNet_01_ammo_F";                      // This 
 KP_liberation_fuel_crate = "CargoNet_01_barrels_F";                     // This defines the fuel crates.
 KP_liberation_hare_classname = "rhsusf_m998_d_2dr_halftop";             // The rabbit asset class
 KP_liberation_tortoise_classname = "rhsusf_m1245_m2crows_socom_d";      // The tortoise asset class
+KP_liberation_container_repair = "B_Slingload_01_Repair_F";             // Huron Repair
+KP_liberation_container_fuel = "B_Slingload_01_Fuel_F";                 // Huron Fuel
+KP_liberation_container_ammo = "B_Slingload_01_Ammo_F";                 // Huron Ammo
+
 
 /*
     --- Friendly classnames ---
@@ -257,9 +261,9 @@ support_vehicles = [
     ["B_Truck_01_Repair_F",325,0,75],                                   // HEMTT Repair
     ["B_Truck_01_fuel_F",125,0,275],                                    // HEMTT Fuel
     ["B_Truck_01_ammo_F",125,200,75],                                   // HEMTT Ammo
-    ["B_Slingload_01_Repair_F",275,0,0],                                // Huron Repair
-    ["B_Slingload_01_Fuel_F",75,0,200],                                 // Huron Fuel
-    ["B_Slingload_01_Ammo_F",75,200,0]                                  // Huron Ammo
+    [KP_liberation_container_repair,275,0,0],
+    [KP_liberation_container_fuel,75,0,200],
+    [KP_liberation_container_ammo,75,200,0]
 ];
 
 /*
