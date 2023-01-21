@@ -36,6 +36,12 @@ private _spec = missionNamespace getVariable ["KP_liberation_startvehicle_spec",
     //              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     , [ "hare", KP_liberation_hare_classname]
     //          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    , [ "container_repair", KP_liberation_container_repair]
+    //                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    , [ "container_fuel", KP_liberation_container_fuel]
+    //                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    , [ "container_ammo", KP_liberation_container_ammo]
+    //                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ]];
 
 diag_log format ["[KP LIBERATION] [STARTVEHICLE] Start vehicle specs: [_spec]: %1"
