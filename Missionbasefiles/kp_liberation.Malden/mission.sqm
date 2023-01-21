@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=989;
+		nextID=1021;
 	};
 	class Camera
 	{
-		pos[]={11487.657,53.132656,8340.7891};
-		dir[]={-0.027879037,-0.57277018,0.81928033};
-		up[]={-0.019480281,0.81970555,0.57244968};
-		aside[]={0.99944609,1.0954773e-007,0.034009025};
+		pos[]={11439.67,63.081135,8338.5566};
+		dir[]={0.15015456,-0.66604519,0.73068714};
+		up[]={0.13406995,0.74590367,0.65241903};
+		aside[]={0.97955751,2.3607572e-007,-0.20129785};
 	};
 };
 binarizationWanted=0;
@@ -533,7 +533,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=407;
+		items=406;
 		class Item0
 		{
 			dataType="Layer";
@@ -12094,42 +12094,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11398.854,22.949577,8328.7568};
-				angles[]={0,4.712389,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				name="huronspawn";
-			};
-			id=3943;
-			type="Land_ClutterCutter_small_F";
-			atlOffset=81.839432;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item389
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={11509,23.491686,8349};
-				angles[]={-0,6.0213866,0};
+				angles[]={0,6.0213866,0};
 			};
 			side="Empty";
 			flags=4;
@@ -12157,7 +12123,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item390
+		class Item389
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12175,7 +12141,7 @@ class Mission
 			type="Land_Medevac_house_V1_F";
 			atlOffset=86.285065;
 		};
-		class Item391
+		class Item390
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12192,7 +12158,7 @@ class Mission
 			type="Flag_White_F";
 			atlOffset=8.5371237;
 		};
-		class Item392
+		class Item391
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12208,7 +12174,7 @@ class Mission
 			type="Flag_US_F";
 			atlOffset=8.5367727;
 		};
-		class Item393
+		class Item392
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12242,7 +12208,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item394
+		class Item393
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12259,7 +12225,7 @@ class Mission
 			type="Flag_White_F";
 			atlOffset=86.200623;
 		};
-		class Item395
+		class Item394
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12293,7 +12259,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item396
+		class Item395
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12327,7 +12293,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item397
+		class Item396
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12361,7 +12327,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item398
+		class Item397
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12420,7 +12386,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item399
+		class Item398
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12479,7 +12445,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item400
+		class Item399
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12512,7 +12478,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item401
+		class Item400
 		{
 			dataType="Layer";
 			name="Fleet Icons";
@@ -12535,7 +12501,7 @@ class Mission
 			id=3959;
 			atlOffset=81.461494;
 		};
-		class Item402
+		class Item401
 		{
 			dataType="Layer";
 			name="Public Server Zeus Modules";
@@ -12960,7 +12926,7 @@ class Mission
 			id=3967;
 			atlOffset=-4.9591064e-005;
 		};
-		class Item403
+		class Item402
 		{
 			dataType="Layer";
 			name="Public Server Slots";
@@ -21348,7 +21314,7 @@ class Mission
 			id=4083;
 			atlOffset=0.39091301;
 		};
-		class Item404
+		class Item403
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21381,7 +21347,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item405
+		class Item404
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21415,7 +21381,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item406
+		class Item405
 		{
 			dataType="Object";
 			class PositionInfo
