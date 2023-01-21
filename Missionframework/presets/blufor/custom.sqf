@@ -26,6 +26,7 @@ huron_typename = "B_Heli_Transport_03_unarmed_F";                       // This 
 crewman_classname = "B_crew_F";                                         // This defines the crew for vehicles.
 pilot_classname = "B_Helipilot_F";                                      // This defines the pilot for helicopters.
 KP_liberation_little_bird_classname = "B_Heli_Light_01_F";              // These are the little birds which spawn on the Freedom or at Chimera base.
+KP_liberation_big_bird_classname = "rhsusf_CH53E_USMC";                 // CH-53E Super Stallion
 KP_liberation_boat_classname = "B_Boat_Transport_01_F";                 // These are the boats which spawn at the stern of the Freedom.
 KP_liberation_truck_classname = "B_Truck_01_transport_F";               // These are the trucks which are used in the logistic convoy system.
 KP_liberation_small_storage_building = "ContainmentArea_02_sand_F";     // A small storage area for resources.
@@ -177,7 +178,7 @@ air_vehicles = [
     ["RHS_UH60M_MEV2",300,0,150],                                       // UH-60M MEV2
     ["RHS_CH_47F",275,80,175],                                          // CH-47 Chinook (Armed)
     ["I_Heli_Transport_02_F",275,0,175],                                // CH-49 Mohawk
-    ["rhsusf_CH53E_USMC",300,0,175],                                    // CH-53E Super Stallion
+    [KP_liberation_big_bird_classname,300,0,175],
     ["rhsusf_CH53E_USMC_GAU21_D",300,100,175],                          // CH-53E Super Stallion (GAU-21)
     ["B_Heli_Transport_03_F",300,80,175],                               // CH-67 Huron (Armed)
     ["B_UAV_02_dynamicLoadout_F",400,400,200],                          // MQ-4A Greyhawk
