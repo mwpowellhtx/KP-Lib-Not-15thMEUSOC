@@ -150,19 +150,20 @@ for (let preset of presets) {
             .pipe(gulp.dest(mission.getWorkDir()))
     });
 
+    // TODO: TBD: not sure how we would validate otherwise
+    // We 'have' a WORKSHOPID present, and it is at least non-empty
     if (!!preset.workshopId) {
+        if (preset.workshopId !== "") {
+            taskNamesWorkshop.push('workshop_' + taskName);
 
-        taskNamesWorkshop.push('workshop_' + taskName);
+            gulp.task('workshop_' + taskName, async () => {
+                const pboPath = resolve(mission.getWorkDir(), 'pbo', mission.getFullName() + '.pbo');
+                console.log(pboPath);
 
-        gulp.task('workshop_' + taskName, async () => {
-            const pboPath = resolve(mission.getWorkDir(), 'pbo', mission.getFullName() + '.pbo');
-            console.log(pboPath);
-
-            await uploadLegacy(preset.workshopId, pboPath);
-        });
+                await uploadLegacy(preset.workshopId, pboPath);
+            });
+        }
     }
-
-
 }
 
 // Main tasks
