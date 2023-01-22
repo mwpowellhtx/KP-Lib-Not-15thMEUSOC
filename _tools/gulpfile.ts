@@ -184,6 +184,16 @@ gulp.task('default',
     gulp.series(
         gulp.task('build'),
         gulp.task('pbo'),
+        gulp.task('zip')
+    )
+);
+
+// PUBLISH is like DEFAULT plus the WORKSHOP task
+gulp.task('publish',
+    gulp.series(
+        gulp.task('build'),
+        gulp.task('pbo'),
         gulp.task('zip'),
+        gulp.task('workshop')
     )
 );
